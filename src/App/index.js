@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import './App.css';
 import Welcome from './WelcomeMessage';
 import AppLayout from './AppLayout';
-import AppBar from './AppBar'
+import AppBar from './AppBar';
+import {AppProvider} from './AppProvider';
+
 // import styled, {css} from 'styled-components';
 
 // // create a div named MyButton
@@ -26,20 +28,24 @@ import AppBar from './AppBar'
 //   border-color: tomato;
 // `;
 
+// ==================================================================
+
+// Below goes inside return in render
+
+{/* <MyButton> Hello from non-primary! </MyButton>
+<MyButton primary={"0"}> Hello from primary! </MyButton>
+<TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
+
 class App extends Component {
   render () {
 
     return (
-      <>
-      {/* <MyButton> Hello from non-primary! </MyButton>
-      <MyButton primary={"0"}> Hello from primary! </MyButton>
-      <TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
-    <AppLayout>
-      <AppBar/>
-      <Welcome/>
-    </AppLayout>
-
-      </>
+      <AppLayout>
+        <AppProvider>
+          <AppBar/>
+            <Welcome/>
+        </AppProvider>
+      </AppLayout>
     );
   }
 }
