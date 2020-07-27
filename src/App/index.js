@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Welcome from './WelcomeMessage';
-import styled, {css} from 'styled-components';
+import AppLayout from './AppLayout';
+// import styled, {css} from 'styled-components';
 
 // // create a div named MyButton
 // // styled it with color green
@@ -32,8 +33,9 @@ class App extends Component {
       {/* <MyButton> Hello from non-primary! </MyButton>
       <MyButton primary={"0"}> Hello from primary! </MyButton>
       <TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
-
+    <AppLayout>
       <Welcome/>
+    </AppLayout>
 
       </>
     );
