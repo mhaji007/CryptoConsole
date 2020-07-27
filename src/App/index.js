@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Welcome from './WelcomeMessage';
 import AppLayout from './AppLayout';
+import AppBar from './AppBar'
 // import styled, {css} from 'styled-components';
 
 // // create a div named MyButton
@@ -34,6 +35,7 @@ class App extends Component {
       <MyButton primary={"0"}> Hello from primary! </MyButton>
       <TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
     <AppLayout>
+      <AppBar/>
       <Welcome/>
     </AppLayout>
 
