@@ -47,7 +47,6 @@ export default function() {
             <ControlButton active name="dashboard"/>
             <ControlButton name="settings"/>
 
-
         </Bar>
     )
 }

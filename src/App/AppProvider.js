@@ -13,6 +13,8 @@ const MAX_FAVORITES = 10;
 export const AppContext = React.createContext();
 
 export class AppProvider extends Component {
+
+    setPage = page => this.setState({page})
     
     // Overwrites some state properties
     // based on whether there is data
@@ -20,15 +22,20 @@ export class AppProvider extends Component {
     savedSettings(){
         // return first visit variables
         let cryptoConsoleData = JSON.parse(localStorage.getItem('cryptoConsole'));
+
+        console.log(cryptoConsoleData);
+         
         if(!cryptoConsoleData) {
             
+            return {page: 'settings', firstVisit: true}
             // We don't need to specify all the variables
             // in the default state. You can set them after the fact.
             //(e.g., firstVisit variable below)
-            return{page:'settings', firstVisit: true}
         }
 
-        return {}
+        let {favorites} = cryptoConsoleData;
+
+        return {favorites}
     }
 
     componentDidMount = () => {
@@ -39,7 +46,7 @@ export class AppProvider extends Component {
         // .Data returns just the coins
         let coinList = (await cc.coinList()).Data;
         this.setState({coinList});
-        //console.log(coinList);
+        console.log(coinList);
     }
 
     addCoin = key => {
@@ -65,7 +72,7 @@ export class AppProvider extends Component {
         });
 
         localStorage.setItem('cryptoConsole', JSON.stringify({
-            test: 'hello'
+            favorites: this.state.favorites
         }));
     }
     
@@ -77,7 +84,7 @@ export class AppProvider extends Component {
         page: 'dashboard',
         favorites: ['BTC', 'ETH', 'XMR', 'DOGE'],
         ...this.savedSettings(),
-        setPage:  page => this.setState({page}),
+        setPage: this.setPage,  //page => this.setState({page}),
         addCoin: this.addCoin,
         removeCoin: this.removeCoin,
         isInFavorites: this.isInFavorites,
@@ -94,3 +101,4 @@ export class AppProvider extends Component {
     }
 }
  
+

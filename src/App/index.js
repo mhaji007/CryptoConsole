@@ -38,14 +38,13 @@ import Content from '../Shared/Content.js'
 <TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
 
 class App extends Component {
-  render () {
-
+  render() {
     return (
       <AppLayout>
         <AppProvider>
           <AppBar/>
           <Content>
-            <Settings/>
+            <Settings />
           </Content>
         </AppProvider>
       </AppLayout>
