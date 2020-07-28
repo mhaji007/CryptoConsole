@@ -55,6 +55,8 @@ export class AppProvider extends Component {
         this.setState({favorites: _.pull(favorites, key)})
       }
     
+      isInFavorites = key => _.includes(this.state.favorites, key);
+
     
     confirmFavorites = ()=>{
         this.setState({
@@ -78,6 +80,7 @@ export class AppProvider extends Component {
         setPage:  page => this.setState({page}),
         addCoin: this.addCoin,
         removeCoin: this.removeCoin,
+        isInFavorites: this.isInFavorites,
         confirmFavorites: this.confirmFavorites
     }
     
