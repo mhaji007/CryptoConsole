@@ -19,8 +19,11 @@ export default function({coinKey, topSection}){
   return <AppContext.Consumer>
     {({coinList}) => {
       let coin = coinList[coinKey];
-      const TileClass = SelectableTile;
-      return <TileClass>
+      let TileClass = SelectableTile;
+      if(topSection) {
+        TileClass = DeletableTile
+        }
+        return <TileClass>
         <CoinHeaderGrid name= {coin.CoinName} symbol={coin.Symbol}/>
         <CoinImage coin = {coin}/>
         </TileClass>
