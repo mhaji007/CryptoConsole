@@ -24,7 +24,7 @@ export default function({coinKey, topSection}){
         TileClass = DeletableTile
         }
         return <TileClass>
-        <CoinHeaderGrid name= {coin.CoinName} symbol={coin.Symbol}/>
+        <CoinHeaderGrid topSection={topSection} name= {coin.CoinName} symbol={coin.Symbol}/>
         <CoinImage coin = {coin}/>
         </TileClass>
     }}
