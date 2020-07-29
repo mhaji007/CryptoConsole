@@ -15,6 +15,8 @@ export const AppContext = React.createContext();
 export class AppProvider extends Component {
 
     setPage = page => this.setState({page})
+
+    setFilteredCoins = (filteredCoins) => this.setState({filteredCoins})
     
     // Overwrites some state properties
     // based on whether there is data
@@ -88,7 +90,8 @@ export class AppProvider extends Component {
         addCoin: this.addCoin,
         removeCoin: this.removeCoin,
         isInFavorites: this.isInFavorites,
-        confirmFavorites: this.confirmFavorites
+        confirmFavorites: this.confirmFavorites,
+        setFilteredCoins: this.setFilteredCoins
     }
     
 
