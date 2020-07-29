@@ -7,6 +7,9 @@ export default function(props){
       if(!coinList){
         return <div> Loading Coins </div>
       }
+      if(!firstVisit && !prices){
+        return <div> Loading Prices </div>
+      }
       return <div> {props.children} </div>
     }}
   </AppContext.Consumer>
