@@ -20,7 +20,11 @@ export class AppProvider extends Component {
 
     setPage = page => this.setState({page})
 
-    setFilteredCoins = (filteredCoins) => this.setState({filteredCoins})
+    setFilteredCoins = (filteredCoins) => this.setState({filteredCoins});
+
+    changeChartSelect = (value) => {
+        this.setState({timeInterval: value, historical: null}, this.fetchHistorical);
+      }
     
     // Overwrites some state properties
     // based on whether there is data
@@ -164,6 +168,7 @@ export class AppProvider extends Component {
     state = {
         page: 'dashboard',
         favorites: ['BTC', 'ETH', 'XMR', 'DOGE'],
+        timeInterval: 'months',
         ...this.savedSettings(),
         setPage: this.setPage,  //page => this.setState({page}),
         addCoin: this.addCoin,
@@ -171,7 +176,8 @@ export class AppProvider extends Component {
         isInFavorites: this.isInFavorites,
         confirmFavorites: this.confirmFavorites,
         setCurrentFavorite: this.setCurrentFavorite,
-        setFilteredCoins: this.setFilteredCoins
+        setFilteredCoins: this.setFilteredCoins,
+        changeChartSelect: this.changeChartSelect
     }
     
 
