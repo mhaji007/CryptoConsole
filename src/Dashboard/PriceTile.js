@@ -41,6 +41,7 @@ const PriceTileStyled = styled(SelectableTile)`
     ${greenBoxShadow}
     pointer-events: none; 
   `}
+
 `
 
 function ChangePercent({data}){
