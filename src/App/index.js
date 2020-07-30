@@ -34,9 +34,9 @@ import Content from '../Shared/Content.js'
 
 // Below goes inside return in render
 
-{/* <MyButton> Hello from non-primary! </MyButton>
+/* <MyButton> Hello from non-primary! </MyButton>
 <MyButton primary={"0"}> Hello from primary! </MyButton>
-<TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */}
+<TomatoButton primary={"0"}> Hello from primary! </TomatoButton> */
 
 class App extends Component {
   render() {
